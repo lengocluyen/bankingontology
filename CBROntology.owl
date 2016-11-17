@@ -1,0 +1,713 @@
+@prefix : <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_coordonnée
+
+:a_la_coordonnée a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_coordonnée_bancaire_du_compte_à_débiter
+
+:a_la_coordonnée_bancaire_du_compte_à_débiter a owl:ObjectProperty ;
+	rdfs:subPropertyOf :a_la_coordonnée ;
+	rdfs:domain :Mandat_de_prélèvement ;
+	rdfs:range :Coordonnée_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_coordonnée_de_la_banque
+
+:a_la_coordonnée_de_la_banque a owl:ObjectProperty ;
+	rdfs:subPropertyOf :a_la_coordonnée ;
+	rdfs:domain :Banque ;
+	rdfs:range :Coordonnée_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_coordonnée_du_créancier
+
+:a_la_coordonnée_du_créancier a owl:ObjectProperty ;
+	rdfs:subPropertyOf :a_la_coordonnée ;
+	rdfs:domain :Mandat_de_prélèvement ;
+	rdfs:range :Coordonnée_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_coordonnée_du_débiteur
+
+:a_la_coordonnée_du_débiteur a owl:ObjectProperty ;
+	rdfs:subPropertyOf :a_la_coordonnée ;
+	rdfs:domain :Mandat_de_prélèvement ;
+	rdfs:range :Coordonnée_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_nationalité_de
+
+:a_la_nationalité_de a owl:ObjectProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range :Pays .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_mandat_de_prélèvement
+
+:a_le_mandat_de_prélèvement a owl:ObjectProperty ;
+	rdfs:domain :Prélèvement_bancaire ;
+	rdfs:range :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_lieu_de_naissance
+
+:a_lieu_de_naissance a owl:ObjectProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range :Adresse .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#accède_via_internet
+
+:accède_via_internet a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Compte_bancaire_en_ligne .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_conseillé_par
+
+:est_conseillé_par a owl:ObjectProperty ;
+	rdfs:domain :Client ;
+	rdfs:range :Conseiller .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_délivré_par
+
+:est_délivré_par a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Banque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_détenue_par
+
+:est_détenue_par a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Client .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_envoyé_à
+
+:est_envoyé_à a owl:ObjectProperty ;
+	rdfs:domain :Quittance ;
+	rdfs:range :Domicile .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_identité_par
+
+:est_identité_par a owl:ObjectProperty ;
+	rdfs:domain :Client ;
+	rdfs:range :Identité .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_imprimé_dans
+
+:est_imprimé_dans a owl:ObjectProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range :Chèquier .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_la_propriété_de
+
+:est_la_propriété_de a owl:ObjectProperty ;
+	rdfs:subPropertyOf :est_un_composant_de ;
+	rdfs:domain :Chèquier ;
+	rdfs:range :Compte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_le_solde_de
+
+:est_le_solde_de a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Balance_courante .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_survenu_dans
+
+:est_survenu_dans a owl:ObjectProperty ;
+	rdfs:domain :Problème_avec_la_carte_bancaire ;
+	rdfs:range :Carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_un_composant_de
+
+:est_un_composant_de a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_un_succursale_de
+
+:est_un_succursale_de a owl:ObjectProperty ;
+	rdfs:domain :Agence_bancaire ;
+	rdfs:range :Banque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_une_partie_de
+
+:est_une_partie_de a owl:ObjectProperty ;
+	rdfs:subPropertyOf :est_un_composant_de ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range :Compte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#habite_dans
+
+:habite_dans a owl:ObjectProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range :Domicile .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#travaille_dans
+
+:travaille_dans a owl:ObjectProperty ;
+	rdfs:domain :Conseiller ;
+	rdfs:range :Agence_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#utilise_la_service_de_prélèvement_automatique
+
+:utilise_la_service_de_prélèvement_automatique a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Prélèvement_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_de
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_de> a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range :Identité .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_de_RIB
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_de_RIB> a owl:ObjectProperty ;
+	rdfs:domain :Compte_bancaire ;
+	rdfs:range <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_coût_d'une_carte_bancaire
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_coût_d'une_carte_bancaire> a owl:ObjectProperty ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range :Tarif_de_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_l'adresse_de
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#est_l'adresse_de> a owl:ObjectProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range :Identité .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_carte_de_résident
+
+:a_la_carte_de_résident a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_date_de_création_du_chèque
+
+:a_la_date_de_création_du_chèque a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:dateTime .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_date_de_naissance
+
+:a_la_date_de_naissance a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:dateTime .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_date_signé_du_débiteur
+
+:a_la_date_signé_du_débiteur a owl:DatatypeProperty ;
+	rdfs:domain :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_péridoe_de_validité
+
+:a_la_péridoe_de_validité a owl:DatatypeProperty ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_raison_sociale
+
+:a_la_raison_sociale a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_code_BIC
+
+:a_le_code_BIC a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string ;
+	rdfs:comment "le code BIC (« Bank Identifier Code »), à 8 ou 11 caractères, qui est l’identifiant international de la banque"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_code_postal_et_localité_de_destination_ou_code_cedex
+
+:a_le_code_postal_et_localité_de_destination_ou_code_cedex a owl:DatatypeProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_jour_de_prélèvement_dans_le_mois
+
+:a_le_jour_de_prélèvement_dans_le_mois a owl:DatatypeProperty ;
+	rdfs:domain :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_lieu_de_création_du_chèque
+
+:a_le_lieu_de_création_du_chèque a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_lieu_de_paiement
+
+:a_le_lieu_de_paiement a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_lieu_dit_ou_service_particulier_des_distribution
+
+:a_le_lieu_dit_ou_service_particulier_des_distribution a owl:DatatypeProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_montant
+
+:a_le_montant a owl:DatatypeProperty ;
+	rdfs:domain :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_mot_chèque
+
+:a_le_mot_chèque a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom
+
+:a_le_nom a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_de_la_carte
+
+:a_le_nom_de_la_carte a owl:DatatypeProperty ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_du_créancier
+
+:a_le_nom_du_créancier a owl:DatatypeProperty ;
+	rdfs:domain :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_du_débiteur
+
+:a_le_nom_du_débiteur a owl:DatatypeProperty ;
+	rdfs:domain :Mandat_de_prélèvement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_du_tireur
+
+:a_le_nom_du_tireur a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_du_tiré
+
+:a_le_nom_du_tiré a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_et_le_prénom
+
+:a_le_nom_et_le_prénom a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_la_banque
+
+:a_le_nom_la_banque a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_numéro_IBAN
+
+:a_le_numéro_IBAN a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string ;
+	rdfs:comment "e numéro IBAN (« International Bank Account Number »), à 27 caractères, qui est l’identifiant international du compte bancaire"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_numéro_RIB
+
+:a_le_numéro_RIB a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string ;
+	rdfs:comment "le numéro RIB, qui comprend le code de la banque à 5 chiffres, le code du guichet à 5 chiffres, le numéro de compte, en général à 11 chiffres ou lettres, la clé à 2 chiffre"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_numéro_appartement_ou_bâtiment
+
+:a_le_numéro_appartement_ou_bâtiment a owl:DatatypeProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_numéro_de_la_carte
+
+:a_le_numéro_de_la_carte a owl:DatatypeProperty ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range xsd:decimal .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_numéro_ou_libelle_de_la_voie
+
+:a_le_numéro_ou_libelle_de_la_voie a owl:DatatypeProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_prénom
+
+:a_le_prénom a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_titulaire_du_compte
+
+:a_le_titulaire_du_compte a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_son_adresse_complète
+
+:a_son_adresse_complète a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_un__numéro_de_contrôle
+
+:a_un__numéro_de_contrôle a owl:DatatypeProperty ;
+	rdfs:domain :Carte_bancaire ;
+	rdfs:range xsd:integer .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_du_passport
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'information_du_passport> a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'ordre_pur_et_simple_de_payer_une_somme__déterminée
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'ordre_pur_et_simple_de_payer_une_somme__déterminée> a owl:DatatypeProperty ;
+	rdfs:domain :Chèque ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'entrée_bâtiment,_immeuble_ou_résidence
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_l'entrée_bâtiment,_immeuble_ou_résidence> a owl:DatatypeProperty ;
+	rdfs:domain :Adresse ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_carte_nationale_d'indentité
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_la_carte_nationale_d'indentité> a owl:DatatypeProperty ;
+	rdfs:domain :Identité ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_de_l'agence_qui_tient_le_compte
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#a_le_nom_de_l'agence_qui_tient_le_compte> a owl:DatatypeProperty ;
+	rdfs:domain <http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> ;
+	rdfs:range xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Adresse
+
+:Adresse a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Agence_bancaire
+
+:Agence_bancaire a owl:Class ;
+	rdfs:subClassOf _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty owl:topObjectProperty ;
+	owl:someValuesFrom :Banque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Balance_courante
+
+:Balance_courante a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Banque
+
+:Banque a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_avec_ou_sans_support_de_crédit
+
+:Carte_avec_ou_sans_support_de_crédit a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_bancaire
+
+:Carte_bancaire a owl:Class ;
+	rdfs:subClassOf _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty owl:topObjectProperty ;
+	owl:someValuesFrom :Carte_de_retrait .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_bancaire_rechargeable
+
+:Carte_bancaire_rechargeable a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement ;
+	rdfs:comment """La carte bancaire rechargeable a la particularité de n’être liée à aucun compte bancaire. C’est une carte bancaire de paiement et de retrait, dont le solde est prépayé et renouvelable. Elle est affiliée à l’un ou l’autre des réseaux internationaux, Visa ou Mastercard.
+La carte bancaire rechargeable est donc une carte bancaire internationale permettant d’effectuer des retraits dans les distributeurs, des achats chez les commerçants, des achats sur Internet et des transferts d’espèces partout dans le monde. Sa durée de validité est de deux à trois ans.
+Toutefois, la carte bancaire rechargeable ne permet pas de découvert, c’est une carte bancaire à autorisation systématique, c’est-à-dire que vous ne pouvez pas faire un retrait ou payer un achat au-delà de votre solde."""@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_de_crédit
+
+:Carte_de_crédit a owl:Class ;
+	rdfs:subClassOf :Carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_de_paiement
+
+:Carte_de_paiement a owl:Class ;
+	rdfs:subClassOf :Carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_de_retrait
+
+:Carte_de_retrait a owl:Class ;
+	rdfs:subClassOf :Carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_internationale
+
+:Carte_internationale a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement ;
+	rdfs:comment "La carte bancaire internationale vous permet d’effectuer des retraits de liquidité dans les distributeurs automatiques en France et à l’étranger, des paiements chez les commerçants affiliés en France et à l’étranger, des virements en euros et en devises, et des achats sur internet. La détention d’une carte bancaire internationale est automatiquement associée à des services d’assistance et d’assurance en cas d’accident."@fr , "les cartes internationales (réseau VISA ou Eurocard) peuvent être utilisées en France et à l’étranger"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_à_débit_différé
+
+:Carte_à_débit_différé a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement ;
+	rdfs:comment """Toutes les dépenses effectuées à l’aide de la carte sont débitées du compte du titulaire en une seule fois dans le mois ou à une date convenue en milieu ou en tout début de mois. Le débit différé constitue une sorte de crédit d’une durée d’un mois maximum, entre la date de l’achat et le prélèvement sur le compte.
+Contrairement aux achats, les retraits sont débités immédiatement avec la carte à débit différé."""@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Carte_à_débit_immédiat
+
+:Carte_à_débit_immédiat a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Cartes_nationales
+
+:Cartes_nationales a owl:Class ;
+	rdfs:subClassOf :Carte_de_paiement ;
+	rdfs:comment "Les cartes nationales ne peuvent être utilisées qu’en France"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Chèque
+
+:Chèque a owl:Class ;
+	rdfs:comment "délivrées gratuitement par toutes les banques (mis à part les éventuels frais d’envoi par la poste), permettent au titulaire d’un compte en banque d’une part d’effectuer des paiements sans manipulation d’espèces, d’autre part des retraits d’espèces"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Chèques_non_barrés_et_endossables
+
+:Chèques_non_barrés_et_endossables a owl:Class ;
+	rdfs:subClassOf :Chèque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Chèques_pré-barrés_et_endossables
+
+:Chèques_pré-barrés_et_endossables a owl:Class ;
+	rdfs:subClassOf :Chèque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Chèques_pré-barrés_et_non_endossables
+
+:Chèques_pré-barrés_et_non_endossables a owl:Class ;
+	rdfs:subClassOf :Chèque .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Chèquier
+
+:Chèquier a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Client
+
+:Client a owl:Class ;
+	owl:equivalentClass :Personne_légale .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_bancaire
+
+:Compte_bancaire a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_bancaire_en_ligne
+
+:Compte_bancaire_en_ligne a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_courant
+
+:Compte_courant a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire ;
+	rdfs:comment "C'est un compte de dépôt qui sert aux relations courantes entre la banque et son client. Il peut également être appelé compte à vue, comde dépôt ou compte chèque"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_de_prêts
+
+:Compte_de_prêts a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_de_titres
+
+:Compte_de_titres a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire ;
+	rdfs:comment "Il est un compte pour les particuliers, qui permet d'inverstisement de valeurs mobilières"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_joint
+
+:Compte_joint a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire ;
+	rdfs:comment "C'est un compte courant ouvert entre deux personnes avec sans lien de parenté"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_professionnel
+
+:Compte_professionnel a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire ;
+	rdfs:comment "Il est dédié aux professionnels et leur permet de déposer et retirer l'argent nécessaire au fonctionnement de leur entreprise"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_épargne
+
+:Compte_épargne a owl:Class ;
+	rdfs:subClassOf :Compte_bancaire ;
+	rdfs:comment "il sert aux dépôts d'argent rapportant généralement un intérêt. Ce n'est pas un compte de paiement"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Compte_épargne_logment
+
+:Compte_épargne_logment a owl:Class ;
+	rdfs:subClassOf :Compte_épargne ;
+	rdfs:comment "Il sert à financier un projet immobilier"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Conseiller
+
+:Conseiller a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Coordonnée_bancaire
+
+:Coordonnée_bancaire a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Cotisation_annuelle
+
+:Cotisation_annuelle a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Domicile
+
+:Domicile a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Electricité_de_France
+
+:Electricité_de_France a owl:Class ;
+	rdfs:subClassOf :Quittance .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fais_de_paiements
+
+:Fais_de_paiements a owl:Class ;
+	rdfs:subClassOf :Frais_sur_les_opérations_en_dehors_de_la_zone_euro .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fais_de_renouvellement_de_la_carte_bancaire
+
+:Fais_de_renouvellement_de_la_carte_bancaire a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire ;
+	rdfs:comment "frais de renouvellement de la carte bancaire en cas de perte ou de vol"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fais_de_retraits
+
+:Fais_de_retraits a owl:Class ;
+	rdfs:subClassOf :Frais_sur_les_opérations_en_dehors_de_la_zone_euro .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Frais_de_virements
+
+:Frais_de_virements a owl:Class ;
+	rdfs:subClassOf :Frais_sur_les_opérations_en_dehors_de_la_zone_euro .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Frais_sur_les_opérations_en_dehors_de_la_zone_euro
+
+:Frais_sur_les_opérations_en_dehors_de_la_zone_euro a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Frais_sur_les_retraits
+
+:Frais_sur_les_retraits a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#France_Télécom
+
+:France_Télécom a owl:Class ;
+	rdfs:subClassOf :Quittance .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Franchises_retenues
+
+:Franchises_retenues a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire ;
+	rdfs:comment "les franchises retenues si des opérations sont effectuées après le vol de la carte bancaire"@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fraude_à_la_carte_bancaire
+
+:Fraude_à_la_carte_bancaire a owl:Class ;
+	rdfs:subClassOf :Problème_avec_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Identité
+
+:Identité a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Loyer
+
+:Loyer a owl:Class ;
+	rdfs:subClassOf :Quittance .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Mandat_de_prélèvement
+
+:Mandat_de_prélèvement a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Pays
+
+:Pays a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Personne_légale
+
+:Personne_légale a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Perte_de_la_carte_bancaire
+
+:Perte_de_la_carte_bancaire a owl:Class ;
+	rdfs:subClassOf :Problème_avec_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Problème_avec_la_carte_bancaire
+
+:Problème_avec_la_carte_bancaire a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Prélèvement_bancaire
+
+:Prélèvement_bancaire a owl:Class ;
+	rdfs:subClassOf :Service_bancaire ;
+	rdfs:comment "L’autorisation de prélèvement bancaire automatique est un procédé simple et pratique pour ne plus oublier de payer ses factures, mais il faut rester vigilant."@fr .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Quittance
+
+:Quittance a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Service_bancaire
+
+:Service_bancaire a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Tarif_de_la_carte_bancaire
+
+:Tarif_de_la_carte_bancaire a owl:Class .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Vol_de_la_carte_bancaire
+
+:Vol_de_la_carte_bancaire a owl:Class ;
+	rdfs:subClassOf :Problème_avec_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fais_d'opposition
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Fais_d'opposition> a owl:Class ;
+	rdfs:subClassOf :Tarif_de_la_carte_bancaire .
+# 
+# http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire
+
+<http://www.semanticweb.org/lengocluyen/ontologies/2016/10/ORCB#Relevé_d’Identité_Bancaire> a owl:Class ;
+	rdfs:subClassOf :Service_bancaire .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
